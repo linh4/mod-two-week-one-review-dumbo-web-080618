@@ -1,0 +1,10 @@
+<% @seas.each do |s| %>
+  <h1>Name: <%= s.name %></h1>
+  <p>Temperature: <%= s.temperature %></p>
+  <p>Bio: <%= s.bio %></p>
+  <p>Mood: <%= s.mood %></p>
+  <p>Image: <%= s.image_url %></p>
+  <p>Favorite Color: <%= s.favorite_color %></p>
+  <p>Scariest Creature: <%= s.scariest_creature %></p>
+  <p>Has Mermaids? <%= s.has_mermaids %></p>
+<% end  %>
