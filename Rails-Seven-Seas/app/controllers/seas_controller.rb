@@ -15,7 +15,7 @@ class SeasController < ApplicationController
 
 
   def create
-    @sea = Sea.create(name: params[:name], temperature: params[:temperature], bio: params[:bio], image_url: params[:image_url], mood: params[:mood], favorite_color: params[:favorite_color], scariest_creature: params[:scariest_creature], has_mermaids: params[:has_mermaids])
+    @sea = Sea.create(sea_params)
 
     redirect_to sea_path(@sea)
   end
@@ -26,7 +26,7 @@ class SeasController < ApplicationController
 
   def update
     @sea = Sea.find(params[:id])
-    @sea.update(params.require(:sea).permit(:name, :temperature, :bio, :image_url, :mood, :favorite_color, :scariest_creature, :has))
+    @sea.update(sea_params)
 
     redirect_to sea_path(@sea)
   end
